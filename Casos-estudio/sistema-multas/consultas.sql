@@ -1,11 +1,12 @@
 -- a) listado de vehiculos actualmente en el corralon, ordenados por fecha
 -- de ingreso y cantidad de multas impagas
 
--- select c.id_aucorr, c.id_auto, c.ingreso 
--- from corralon c
--- join auto_multa am on am.id_auto = c.id_auto 
--- where am.estado like "%pendiente%"
--- order by c.ingreso asc
+--  select c.id_aucorr, c.id_auto, c.ingreso, count(am.estado) as multa_pendiente
+--  from corralon c
+--  left join auto_multa am on am.id_auto = c.id_auto
+--  and am.estado = 'pendiente'
+--  group by c.id_auto, c.id_auto, c.ingreso 
+--  order by c.ingreso asc
 
 -- b) listado de todas las multas que se realizaron en la calle pellegrini
 -- entre las alturas 100 a 300
